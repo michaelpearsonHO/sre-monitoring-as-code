@@ -18,6 +18,9 @@ concurrency:
 jobs:
   render-diagrams:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./docs
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -25,17 +28,17 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Export drawio files to png files
-        uses: rlespinasse/drawio-export-action@v2
+        uses: rlespinasse/drawio-export-action@v2.5.0
         with:
-          path: ./docs
           format: png
           transparent: true
           output: source/images
+
       - name: Upload images for building docs
         uses: actions/upload-artifact@v3
         with:
           name: images
-          path: ./docs/source/images
+          path: source/images
 
   build-docs:
     runs-on: ubuntu-latest
