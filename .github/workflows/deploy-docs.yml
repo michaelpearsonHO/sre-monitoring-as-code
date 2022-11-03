@@ -33,6 +33,7 @@ jobs:
 
   build-docs:
     runs-on: ubuntu-latest
+    needs: render-diagrams
     env:
       BUNDLE_GEMFILE: ${{ github.workspace }}/docs/Gemfile
     steps:
@@ -55,7 +56,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    needs:  [render-diagrams, build-docs]
+    needs: build-docs
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
