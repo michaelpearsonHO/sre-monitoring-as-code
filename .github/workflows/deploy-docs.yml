@@ -30,7 +30,7 @@ jobs:
           path: ./docs
           format: png
           transparent: true
-          output: ./docs/images
+          output: ./docs/source/images
 
   build-docs:
     runs-on: ubuntu-latest
