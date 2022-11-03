@@ -30,11 +30,12 @@ jobs:
           path: ./docs
           format: png
           transparent: true
+          output: source/images
       - name: Upload images for building docs
         uses: actions/upload-artifact@v3
         with:
           name: images
-          path: export
+          path: .docs/source/images
 
   build-docs:
     runs-on: ubuntu-latest
