@@ -31,6 +31,11 @@ jobs:
           format: png
           transparent: true
           output: ./docs/source/images
+      - name: Upload images for building docs
+        uses: actions/upload-artifact@v3
+        with:
+          name: images
+          path: ./docs/source/images
 
   build-docs:
     runs-on: ubuntu-latest
@@ -42,6 +47,10 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+      - name: Download images from render-diagrams
+        uses: actions/download-artifact@v3
+        with:
+          name: images
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
