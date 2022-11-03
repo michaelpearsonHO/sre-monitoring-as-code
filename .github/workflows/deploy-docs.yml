@@ -52,7 +52,7 @@ jobs:
           path: ./docs
           format: png
           transparent: true
-          output: ./docs/images
+          output: ./public/images
 
   deploy:
     runs-on: ubuntu-latest
