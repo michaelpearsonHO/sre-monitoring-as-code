@@ -16,7 +16,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  build-docs:
     runs-on: ubuntu-latest
     env:
       BUNDLE_GEMFILE: ${{ github.workspace }}/docs/Gemfile
@@ -56,7 +56,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    needs:  [build, render-diagrams]
+    needs:  [build-docs, render-diagrams]
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
