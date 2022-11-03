@@ -21,7 +21,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Draw.io Export Action
-        uses: rlespinasse/drawio-export-action@2.5.0
+        uses: rlespinasse/drawio-export-action@v2.5.0
         with:
           # Path to the drawio files to export
           path: docs
