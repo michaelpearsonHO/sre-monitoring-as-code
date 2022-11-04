@@ -27,6 +27,7 @@ jobs:
       - name: Export drawio files to png files
         uses: rlespinasse/drawio-export-action@v2.5.0
         with:
+          path: docs
           format: png
           transparent: true
       - name: Upload artifact
