@@ -34,7 +34,7 @@ jobs:
         uses: actions/upload-artifact@v3.1.1
         with:
           name: images
-          path: export
+          path: ./docs/export
 
   build-docs:
     runs-on: ubuntu-latest
