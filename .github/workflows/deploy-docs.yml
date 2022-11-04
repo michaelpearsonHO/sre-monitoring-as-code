@@ -34,7 +34,7 @@ jobs:
         uses: actions/upload-artifact@v3.1.1
         with:
           name: images
-          path: ./docs/export
+          path: ./docs/source/images
 
   build-docs:
     runs-on: ubuntu-latest
@@ -50,6 +50,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: images
+          path: ./docs/source/images
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
