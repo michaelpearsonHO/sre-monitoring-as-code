@@ -28,7 +28,7 @@ jobs:
           # Exported format [default: pdf] [possible values: adoc, jpg, pdf, png, svg, vsdx, xml]
           format: png
           # Exported folder name (default location is same a path above)
-          output: sources/images
+          output: source/images
 
       - name: Get author and committer info from HEAD commit
         uses: rlespinasse/git-commit-data-action@v1

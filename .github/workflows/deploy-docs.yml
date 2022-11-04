@@ -18,6 +18,9 @@ concurrency:
 jobs:
   render-diagrams:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./docs
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -27,7 +30,6 @@ jobs:
       - name: Export drawio files to png files
         uses: rlespinasse/drawio-export-action@v2.5.0
         with:
-          path: docs
           format: png
           transparent: true
           output: /tmp/images
