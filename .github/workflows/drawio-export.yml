@@ -1,9 +1,9 @@
 name: Export drawio files to png and keep updates synchronised
 on:
   push:
-    branches: [ main, testing ]
+    branches: [ testing ]
   pull_request:
-    branches: [ main, testing ]
+    branches: [ testing ]
     paths:
       - "**.drawio"
       - .github/workflows/drawio-export.yaml
